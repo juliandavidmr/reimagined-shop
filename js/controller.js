@@ -1,26 +1,15 @@
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/tienda', function(err, res){
+  if(err) {
+    console.log('Error: Conectando a la bd: ' + err);
+  } else {
+    console.log('Conexion exitosa con la bd');
+  }
+});
+
+
 angular.module("RDash",["ui.bootstrap","ui.router","ngCookies"]);
 "use strict";
-
-angular.module("RDash")
-.config(["$stateProvider","$urlRouterProvider", function(t,e){
-  e.otherwise("/"),
-  t.state("index",{
-    url:"/",
-    templateUrl:"templates/dashboard.html"
-  })
-  .state("mail",{
-    url:"/mail",
-    templateUrl:"templates/mail.html"
-  })
-  .state("github",{
-    url:"/github",
-    templateUrl:"templates/github.html"
-  })
-  .state("tables",{
-    url:"/tables",
-    templateUrl:"templates/tables.html"
-  })
-}]);
 
 function AlertsCtrl(e){
   e.alerts=[{
@@ -39,7 +28,18 @@ function AlertsCtrl(e){
 }
 
 angular.module("RDash")
-.controller("AlertsCtrl",["$scope",AlertsCtrl]);
+.controller("AlertsCtrl",["$scope", AlertsCtrl])
+.controller('todo', function ($scope) {
+  $scope.todos = ['Item 1', 'Item 2', 'Item 3', 'Item 4'];
+  $scope.addTodo = function () {
+    console.log(this.tarea);
+    $scope.todos.push(this.tarea);
+    this.tarea = '';
+  };
+  $scope.removeTodo = function (index) {
+    $scope.todos.splice(index, 1);
+  };
+});
 
 function MasterCtrl(t,e){
   var o=992;

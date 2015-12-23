@@ -10,8 +10,9 @@
   <!-- SCRIPTS -->
   <script src="lib/js/main.min.js"></script>
   <!-- Custom Scripts -->
-  <script type="text/javascript" src="js/dashboard.min.js"></script>
 	<script src="node_modules/angular/angular.js"></script>
+  <script type="text/javascript" src="js/controller.js"></script>
+  <script type="text/javascript" src="js/routes.js"></script>
 </head>
 <body ng-controller="MasterCtrl">
   <div id="page-wrapper" ng-class="{'open': toggle}" ng-cloak>
@@ -37,6 +38,9 @@
         </li>
         <li class="sidebar-list">
           <a href="#/github">GitHub <span class="menu-icon fa fa-github"></span></a>
+        </li>
+        <li class="sidebar-list">
+          <a href="#/tareas">Tareas <span class="menu-icon fa fa-task"></span></a>
         </li>
       </ul>
       <div class="sidebar-footer">

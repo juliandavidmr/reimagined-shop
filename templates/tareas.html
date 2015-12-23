@@ -1,0 +1,25 @@
+<div class=row>
+  <div class=col-lg-6>
+    <rd-widget>
+      <rd-widget-header icon=fa-tasks title=Tareas>
+        <a href=#>Manage</a>
+      </rd-widget-header>
+    </rd-widget>
+    <!-- Todos input -->
+      <div class="row">
+        <div class="input-group">
+          <input type="text" ng-model="tarea" placeholder="Que desea recordar?" class="form-control">
+          <span class="input-group-btn">
+            <input type="submit" class="btn btn-primary" ng-click="addTodo()" value="Añadir">
+          </span>
+        </div>
+      </div>
+
+      <!-- Todos list -->
+      <p class="input-group" ng-repeat="todo in todos">
+        <input type="text" ng-model="todo" class="form-control">
+        <span class="input-group-btn">
+          <button class="btn btn-danger" ng-click="removeTodo($index)" aria-label="Remove">X</button>
+        </span>
+      </p>
+  </div>
