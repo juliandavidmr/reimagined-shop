@@ -1,3 +1,6 @@
+angular.module("RDash",["ui.bootstrap","ui.router","ngCookies"]);
+"use strict";
+
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/tienda', function(err, res){
   if(err) {
@@ -7,10 +10,7 @@ mongoose.connect('mongodb://localhost/tienda', function(err, res){
   }
 });
 
-
-angular.module("RDash",["ui.bootstrap","ui.router","ngCookies"]);
-"use strict";
-
+//-------------------  Controladores
 function AlertsCtrl(e){
   e.alerts=[{
     type:"success",
@@ -30,14 +30,27 @@ function AlertsCtrl(e){
 angular.module("RDash")
 .controller("AlertsCtrl",["$scope", AlertsCtrl])
 .controller('todo', function ($scope) {
-  $scope.todos = ['Item 1', 'Item 2', 'Item 3', 'Item 4'];
+  $scope.todos = [];
+
   $scope.addTodo = function () {
     console.log(this.tarea);
     $scope.todos.push(this.tarea);
     this.tarea = '';
   };
+
   $scope.removeTodo = function (index) {
     $scope.todos.splice(index, 1);
+  };
+
+  $scope.findAllTareas = function() {
+    tienda.find(function(err, tareas){
+      if(!err){
+        tareas.forEach(elem => {
+          $scope.todos.push(elem);
+          console.log(elem);
+        })
+      }
+    });
   };
 });
 

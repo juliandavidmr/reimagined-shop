@@ -6,7 +6,6 @@ app.on('ready', function(){
 		width: 1400,
 		height: 800,
 		title: 'Shop'
-	})
-
+	});
 	mainWindow.loadUrl('file://' + __dirname + '/index.html')
 })

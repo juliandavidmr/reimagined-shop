@@ -20,6 +20,26 @@ angular.module("RDash")
     url:"/tables",
     templateUrl:"templates/tables.html"
   })
+  .state("clientes",{
+    url:"/clientes",
+    templateUrl:"templates/clientes.html"
+  })
+  .state("cuentas",{
+    url:"/cuentas",
+    templateUrl:"templates/cuentas_pendientes.html"
+  })
+  .state("fc",{
+    url:"/fc",
+    templateUrl:"templates/factura_compra.html"
+  })
+  .state("fv",{
+    url:"/fv",
+    templateUrl:"templates/factura_venta.html"
+  })
+  .state("estadisticas",{
+    url:"/estadisticas",
+    templateUrl:"templates/estadisticas.html"
+  })
   .state("tareas",{
     url:"/tareas",
     templateUrl:"templates/tareas.html",

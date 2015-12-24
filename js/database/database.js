@@ -1,18 +1,14 @@
 /**
 The permitted SchemaTypes are
-
-String
-Number
-Date
-Buffer
-Boolean
-Mixed
-ObjectId
-Array
+          String
+          Number
+          Date
+          Buffer
+          Boolean
+          Mixed
+          ObjectId
+          Array
 */
-
-var mongoose = require('mongoose'),
-  Schema = mongoose.Schema;
 
 //---------------- Usuario
 var usuario = new Schema({
@@ -26,17 +22,6 @@ var usuario = new Schema({
 });
 
 module.exports = mongoose.model('usuario', usuario);
-
-//-------------- tareas
-var tareas = new Schema({
-  tarea: String,
-  hasta: Date,
-  fecha_registro: Date,
-  realizado: Boolean
-});
-
-module.exports = mongoose.model('tareas', tareas);
-
 
 //-------------- factura
 var factura = new Schema({
