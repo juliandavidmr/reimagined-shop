@@ -40,6 +40,10 @@ angular.module("RDash")
     url:"/estadisticas",
     templateUrl:"templates/estadisticas.html"
   })
+  .state("proveedores",{
+    url:"/proveedores",
+    templateUrl:"templates/proveedores.html"
+  })
   .state("tareas",{
     url:"/tareas",
     templateUrl:"templates/tareas.html",

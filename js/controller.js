@@ -1,15 +1,6 @@
 angular.module("RDash",["ui.bootstrap","ui.router","ngCookies"]);
 "use strict";
 
-var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/tienda', function(err, res){
-  if(err) {
-    console.log('Error: Conectando a la bd: ' + err);
-  } else {
-    console.log('Conexion exitosa con la bd');
-  }
-});
-
 //-------------------  Controladores
 function AlertsCtrl(e){
   e.alerts=[{
