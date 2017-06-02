@@ -12,8 +12,8 @@
   "author": "Julian David M R",
   "license": "ISC",
   "devDependencies": {
-    "electron-prebuilt": "^0.36.1",
-    "angular": "1.2.16"
+    "electron-prebuilt": "^1.4.13",
+    "angular": "1.6.4"
   },
   "dependencies": {
     "bootstrap": "^3.3.6",
